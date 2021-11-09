@@ -40,7 +40,7 @@ class CompanyView(View):
                 'tags'         : [tag['tag_name'][x_wanted_language] for tag in data['tags']]
             }
             
-            return JsonResponse({'message' : 'CREATED', 'result' : company_list}, status = 201)
+            return JsonResponse({'result' : company_list}, status = 201)
         
         except KeyError:
             JsonResponse({'message' : 'KEY_ERROR'}, status = 400)
